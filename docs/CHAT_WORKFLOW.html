@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SchoolBot · Chat workflow</title><style>
+:root{color-scheme:light;--bg:#f7f8f5;--paper:#fff;--ink:#202e28;--muted:#647068;--line:#dce4dc;--accent:#216344;--wash:#eaf2eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#153b2a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #83b799;outline-offset:4px}header{border-bottom:1px solid var(--line);background:var(--paper)}.bar{max-width:1160px;margin:auto;padding:19px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-size:18px;font-weight:750;letter-spacing:-.5px;text-decoration:none;color:var(--ink)}.mark{display:grid;place-items:center;width:32px;height:34px;border-radius:9px;background:var(--accent);color:white;font-size:20px}.label{font-size:11px;letter-spacing:1.8px;font-weight:700;color:var(--muted);text-transform:uppercase}.layout{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:212px minmax(0,1fr);gap:48px;padding:40px 32px 80px}aside{align-self:start;position:sticky;top:28px;font-size:13px;line-height:1.5}aside .label{margin-bottom:16px}nav{display:grid;gap:3px}nav a{display:block;padding:8px 10px;border-radius:6px;text-decoration:none;color:var(--muted);border-left:2px solid transparent}nav a:hover,nav a.active{background:var(--wash);color:var(--accent);border-left-color:var(--accent)}.side-note{border-top:1px solid var(--line);padding-top:18px;margin-top:22px;color:var(--muted);font-size:12px}.mobile-nav{display:none}main{min-width:0;max-width:790px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:40px 44px;box-shadow:0 3px 14px #152c1b04}h1,h2,h3{line-height:1.25;letter-spacing:-.035em;color:var(--ink)}h1{font-size:42px;margin:0 0 14px}h2{font-size:27px;margin:52px 0 20px;padding-top:28px;border-top:1px solid var(--line)}h3{font-size:20px;margin:30px 0 15px}p{margin:0 0 19px;overflow-wrap:anywhere}main>h1+p{font-size:23px;line-height:1.45;letter-spacing:-.025em;color:var(--accent)}main>h1+p strong{font-weight:550}ul,ol{padding-left:23px;margin:16px 0 24px}li{padding-left:3px;margin:9px 0;overflow-wrap:anywhere}li::marker{color:var(--accent)}strong{font-weight:650}code{font: .85em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf2ed;border:1px solid #e0e8e0;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{position:relative;border-radius:10px;background:#182b24;color:#e5eee8;padding:49px 20px 20px;margin:22px 0 26px;overflow:auto;max-width:100%;line-height:1.65;tab-size:4}pre code{font-size:12.5px;background:none;border:0;padding:0;white-space:pre;overflow-wrap:normal}pre::before{content:"TERMINAL";position:absolute;top:14px;left:20px;color:#94afa1;font:10px/1.5 ui-monospace,monospace;letter-spacing:1.4px}pre:has(.language-text)::before{content:"WORKSPACE"}.copy{position:absolute;top:8px;right:10px;min-height:32px;border:1px solid #405c4f;background:#233c30;color:#deece3;padding:4px 11px;border-radius:6px;font:12px/1.4 inherit;cursor:pointer}.copy:hover{background:#365642}.table-wrap{overflow-x:auto;max-width:100%;margin:22px 0 26px;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.65}th{text-align:left;background:#f0f4ef;color:#496052;font-size:11px;text-transform:uppercase;letter-spacing:.6px}th,td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}td:first-child{font-weight:550;min-width:125px}td code{white-space:normal}blockquote{margin:20px 0;padding:17px 22px;border-left:3px solid #88ac91;border-radius:0 8px 8px 0;background:var(--wash)}blockquote p:last-child{margin-bottom:0}.flow{display:flex;gap:8px;align-items:center;padding:18px 16px;background:var(--wash);border:1px solid #d7e5d8;border-radius:10px;margin:26px 0}.flow>div{flex:1;line-height:1.5;font-size:13px}.flow b{display:block;color:var(--accent);font-weight:650}.flow small{display:block;font-size:11px;color:var(--muted);margin-top:4px}.arrow{color:#88a88e}footer{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;font-size:12px;color:var(--muted)}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:white;padding:12px;z-index:10}
+@media(max-width:800px){.bar{padding:16px 22px}.layout{display:block;padding:24px 20px 48px}aside{display:none}main{max-width:none;padding:30px 26px}.mobile-nav{display:block;margin-bottom:22px;background:white;border:1px solid var(--line);border-radius:10px}.mobile-nav summary{padding:13px 17px;font-size:14px;font-weight:600;color:var(--accent);cursor:pointer}.mobile-nav nav{padding:0 8px 10px;font-size:14px}.mobile-nav a{padding:11px 12px}h1{font-size:36px}}
+@media(max-width:480px){body{font-size:16px;line-height:1.75}.bar{padding:15px 18px}.label{font-size:9px;letter-spacing:1.2px}.layout{padding:18px 14px 32px}main{padding:27px 20px;border-radius:12px}h1{font-size:34px}main>h1+p{font-size:22px;line-height:1.4}h2{font-size:25px;margin-top:38px;padding-top:25px}h3{font-size:19px}pre{padding-left:15px;padding-right:15px;margin-left:-4px;margin-right:-4px;max-width:calc(100% + 8px)}pre code{font-size:12px}.flow{padding:16px 12px;gap:6px}.flow>div{font-size:12px}.flow small{font-size:10px}th,td{padding:11px;font-size:12px}.mobile-nav{margin-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,aside,.mobile-nav,.copy{display:none}.layout{display:block;padding:0}main{border:0;padding:0;box-shadow:none;max-width:100%}pre{white-space:pre-wrap;break-inside:avoid}body{background:white}h2,h3{break-after:avoid}}
+</style></head>
+<body><a class="skip" href="#content">Skip to content</a><header><div class="bar"><a class="brand" href="../README.html"><span class="mark" aria-hidden="true">s</span>SchoolBot</a><span class="label">Your study companion</span></div></header>
+<div class="layout"><aside><div class="label">In this guide</div><nav aria-label="On this page"><a href="#rescue-context-from-an-existing-chat">Rescue context from an existing chat</a><a href="#begin-a-study-session">Begin a study session</a><a href="#end-the-session">End the session</a><a href="#what-belongs-where">What belongs where?</a></nav><p class="side-note">Your files. Your progress.<br>A fresh start in any chat.</p></aside><div><details class="mobile-nav"><summary>Jump to a section</summary><nav aria-label="On this page"><a href="#rescue-context-from-an-existing-chat">Rescue context from an existing chat</a><a href="#begin-a-study-session">Begin a study session</a><a href="#end-the-session">End the session</a><a href="#what-belongs-where">What belongs where?</a></nav></details><main id="content"><h1 id="your-files-are-the-memory">Your files are the memory</h1>
+<p>SchoolBot keeps the useful parts of studying in a folder you control. The chat
+is a place to work; saving the outcome is what makes the next chat useful.
+SchoolBot doesn't read your chat accounts or automatically synchronize them.</p>
+<h2 id="rescue-context-from-an-existing-chat">Rescue context from an existing chat</h2>
+<p>Paste this into the chat that already knows your coursework:</p>
+<blockquote>
+<p>Help me move my study context into local files. Write a concise Markdown
+handoff with: the course and goals; what I understand; what is confusing;
+assignments and deadlines I actually provided; code and filenames we used;
+unresolved errors; and concrete next steps. Clearly mark uncertainties.
+Include any important code that currently exists only in this chat. Do not
+invent deadlines, file contents, or progress. Separately draft a STATUS.md
+containing just my current state and next steps.</p>
+</blockquote>
+<p>Create your course with <code>python schoolbot.py add-course python101</code>. Run
+<code>python schoolbot.py session python101</code>, then paste the handoff into the printed
+file. Save the drafted status to <code>school/courses/python101/STATUS.md</code>. Save code
+as actual <code>.py</code> files in <code>assignments/</code> or <code>notes/</code>, so it doesn't remain trapped
+in a handoff. Review the summary against the original conversation.</p>
+<h2 id="begin-a-study-session">Begin a study session</h2>
+<ol>
+<li>Update materials and run <code>python schoolbot.py ingest --course python101</code>.</li>
+<li>Run <code>python schoolbot.py export python101</code>.</li>
+<li>Open <code>school/exports/python101-context.md</code> and check the coverage section.</li>
+<li>Attach that file to a new chat, or paste its contents. Attach original slides
+for diagrams and any relevant files listed in <code>python101-omissions.md</code>.</li>
+<li>Give the tutor a concrete starting point:</li>
+</ol>
+<blockquote>
+<p>This file is my saved study context. Start with STATUS.md. I'm working on
+functions today. Ask me one question to check what I know, then guide me
+through the next step. Explain new terms and let me attempt the code first.</p>
+</blockquote>
+<p>For a coding assistant with folder access, point it at the course folder and
+ask it to read <code>STATUS.md</code>, <code>COURSE.md</code>, <code>TASKS.md</code>, and relevant materials.
+For an ordinary web chat, you save its proposed edits yourself.</p>
+<h2 id="end-the-session">End the session</h2>
+<blockquote>
+<p>Draft a replacement STATUS.md and a short session handoff. Include what I
+learned, what we tried, which files changed, what failed, and exactly what
+to do next. Preserve unresolved questions. Suggest TASKS.md changes only for
+deadlines or progress we established in this session.</p>
+</blockquote>
+<p>Run <code>python schoolbot.py session python101</code> and save the handoff in the new file.
+Replace <code>STATUS.md</code> with the reviewed current state and update <code>TASKS.md</code>.
+Re-export before switching chats or assistants. New exports include recent
+session notes first; older notes and large materials may exceed the size budget.</p>
+<h2 id="what-belongs-where">What belongs where?</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>File / folder</th>
+  <th>Keep here</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>STUDENT.md</code></td>
+  <td>Your learning goals and explanation preferences</td>
+</tr>
+<tr>
+  <td><code>COURSE.md</code></td>
+  <td>Syllabus, term, topics, course rules</td>
+</tr>
+<tr>
+  <td><code>STATUS.md</code></td>
+  <td>Current understanding, blockers, immediate next steps</td>
+</tr>
+<tr>
+  <td><code>TASKS.md</code></td>
+  <td>Assignments, due dates, progress</td>
+</tr>
+<tr>
+  <td><code>sessions/</code></td>
+  <td>Dated summaries of what happened in chats</td>
+</tr>
+<tr>
+  <td><code>notes/</code></td>
+  <td>Durable explanations, saved chat summaries, practice code</td>
+</tr>
+<tr>
+  <td><code>assignments/</code></td>
+  <td>Instructions, your code, notebooks and working files</td>
+</tr>
+</tbody>
+</table></div>
+<p>Back up the entire <code>school/</code> folder. Exports are replaceable snapshots, not a
+complete backup: they omit binary originals and may omit text over the budget.
+Everything is local until you choose to share files with an AI service.</p>
+<footer>SchoolBot documentation · Your learning, saved locally.</footer></main></div></div><script>
+document.querySelectorAll('pre').forEach(pre=>{if(pre.querySelector('.language-text'))return;const btn=document.createElement('button');btn.className='copy';btn.type='button';btn.textContent='Copy';btn.setAttribute('aria-label','Copy command');pre.append(btn);btn.addEventListener('click',async()=>{const text=pre.querySelector('code').textContent;try{await navigator.clipboard.writeText(text);btn.textContent='Copied';}catch{const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();const ok=document.execCommand('copy');area.remove();btn.textContent=ok?'Copied':'Select text to copy';}setTimeout(()=>btn.textContent='Copy',2200);});});
+document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(items=>{items.forEach(item=>{if(item.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+item.target.id));}});},{rootMargin:'-5% 0px -70% 0px'});document.querySelectorAll('main h2, main h3').forEach(h=>observer.observe(h));}
+</script></body></html>

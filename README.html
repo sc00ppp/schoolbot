@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>SchoolBot · Getting started</title><style>
+:root{color-scheme:light;--bg:#f7f8f5;--paper:#fff;--ink:#202e28;--muted:#647068;--line:#dce4dc;--accent:#216344;--wash:#eaf2eb}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.75 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}a:hover{color:#153b2a}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #83b799;outline-offset:4px}header{border-bottom:1px solid var(--line);background:var(--paper)}.bar{max-width:1160px;margin:auto;padding:19px 32px;display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{display:flex;align-items:center;gap:11px;font-size:18px;font-weight:750;letter-spacing:-.5px;text-decoration:none;color:var(--ink)}.mark{display:grid;place-items:center;width:32px;height:34px;border-radius:9px;background:var(--accent);color:white;font-size:20px}.label{font-size:11px;letter-spacing:1.8px;font-weight:700;color:var(--muted);text-transform:uppercase}.layout{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:212px minmax(0,1fr);gap:48px;padding:40px 32px 80px}aside{align-self:start;position:sticky;top:28px;font-size:13px;line-height:1.5}aside .label{margin-bottom:16px}nav{display:grid;gap:3px}nav a{display:block;padding:8px 10px;border-radius:6px;text-decoration:none;color:var(--muted);border-left:2px solid transparent}nav a:hover,nav a.active{background:var(--wash);color:var(--accent);border-left-color:var(--accent)}.side-note{border-top:1px solid var(--line);padding-top:18px;margin-top:22px;color:var(--muted);font-size:12px}.mobile-nav{display:none}main{min-width:0;max-width:790px;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:40px 44px;box-shadow:0 3px 14px #152c1b04}h1,h2,h3{line-height:1.25;letter-spacing:-.035em;color:var(--ink)}h1{font-size:42px;margin:0 0 14px}h2{font-size:27px;margin:52px 0 20px;padding-top:28px;border-top:1px solid var(--line)}h3{font-size:20px;margin:30px 0 15px}p{margin:0 0 19px;overflow-wrap:anywhere}main>h1+p{font-size:23px;line-height:1.45;letter-spacing:-.025em;color:var(--accent)}main>h1+p strong{font-weight:550}ul,ol{padding-left:23px;margin:16px 0 24px}li{padding-left:3px;margin:9px 0;overflow-wrap:anywhere}li::marker{color:var(--accent)}strong{font-weight:650}code{font: .85em/1.6 ui-monospace,SFMono-Regular,Consolas,monospace;background:#edf2ed;border:1px solid #e0e8e0;border-radius:4px;padding:2px 5px;overflow-wrap:anywhere}pre{position:relative;border-radius:10px;background:#182b24;color:#e5eee8;padding:49px 20px 20px;margin:22px 0 26px;overflow:auto;max-width:100%;line-height:1.65;tab-size:4}pre code{font-size:12.5px;background:none;border:0;padding:0;white-space:pre;overflow-wrap:normal}pre::before{content:"TERMINAL";position:absolute;top:14px;left:20px;color:#94afa1;font:10px/1.5 ui-monospace,monospace;letter-spacing:1.4px}pre:has(.language-text)::before{content:"WORKSPACE"}.copy{position:absolute;top:8px;right:10px;min-height:32px;border:1px solid #405c4f;background:#233c30;color:#deece3;padding:4px 11px;border-radius:6px;font:12px/1.4 inherit;cursor:pointer}.copy:hover{background:#365642}.table-wrap{overflow-x:auto;max-width:100%;margin:22px 0 26px;border:1px solid var(--line);border-radius:10px}table{border-collapse:collapse;width:100%;font-size:13px;line-height:1.65}th{text-align:left;background:#f0f4ef;color:#496052;font-size:11px;text-transform:uppercase;letter-spacing:.6px}th,td{padding:13px 15px;border-bottom:1px solid var(--line);vertical-align:top}tr:last-child td{border-bottom:0}td:first-child{font-weight:550;min-width:125px}td code{white-space:normal}blockquote{margin:20px 0;padding:17px 22px;border-left:3px solid #88ac91;border-radius:0 8px 8px 0;background:var(--wash)}blockquote p:last-child{margin-bottom:0}.flow{display:flex;gap:8px;align-items:center;padding:18px 16px;background:var(--wash);border:1px solid #d7e5d8;border-radius:10px;margin:26px 0}.flow>div{flex:1;line-height:1.5;font-size:13px}.flow b{display:block;color:var(--accent);font-weight:650}.flow small{display:block;font-size:11px;color:var(--muted);margin-top:4px}.arrow{color:#88a88e}footer{border-top:1px solid var(--line);margin-top:36px;padding-top:22px;font-size:12px;color:var(--muted)}.skip{position:absolute;left:-9999px}.skip:focus{left:16px;top:12px;background:white;padding:12px;z-index:10}
+@media(max-width:800px){.bar{padding:16px 22px}.layout{display:block;padding:24px 20px 48px}aside{display:none}main{max-width:none;padding:30px 26px}.mobile-nav{display:block;margin-bottom:22px;background:white;border:1px solid var(--line);border-radius:10px}.mobile-nav summary{padding:13px 17px;font-size:14px;font-weight:600;color:var(--accent);cursor:pointer}.mobile-nav nav{padding:0 8px 10px;font-size:14px}.mobile-nav a{padding:11px 12px}h1{font-size:36px}}
+@media(max-width:480px){body{font-size:16px;line-height:1.75}.bar{padding:15px 18px}.label{font-size:9px;letter-spacing:1.2px}.layout{padding:18px 14px 32px}main{padding:27px 20px;border-radius:12px}h1{font-size:34px}main>h1+p{font-size:22px;line-height:1.4}h2{font-size:25px;margin-top:38px;padding-top:25px}h3{font-size:19px}pre{padding-left:15px;padding-right:15px;margin-left:-4px;margin-right:-4px;max-width:calc(100% + 8px)}pre code{font-size:12px}.flow{padding:16px 12px;gap:6px}.flow>div{font-size:12px}.flow small{font-size:10px}th,td{padding:11px;font-size:12px}.mobile-nav{margin-bottom:16px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+@media print{header,aside,.mobile-nav,.copy{display:none}.layout{display:block;padding:0}main{border:0;padding:0;box-shadow:none;max-width:100%}pre{white-space:pre-wrap;break-inside:avoid}body{background:white}h2,h3{break-after:avoid}}
+</style></head>
+<body><a class="skip" href="#content">Skip to content</a><header><div class="bar"><a class="brand" href="README.html"><span class="mark" aria-hidden="true">s</span>SchoolBot</a><span class="label">Your study companion</span></div></header>
+<div class="layout"><aside><div class="label">In this guide</div><nav aria-label="On this page"><a href="#what-it-does">What it does</a><a href="#quick-start">Quick start</a><a href="#your-workspace">Your workspace</a><a href="#optional-installs">Optional installs</a><a href="#pdfs">PDFs</a><a href="#recordings-optional">Recordings (optional)</a><a href="#youtube-optional">YouTube (optional)</a><a href="#command-reference">Command reference</a><a href="#sharing-and-existing-schoolbot-users">Sharing and existing SchoolBot users</a><a href="#troubleshooting">Troubleshooting</a><a href="#development">Development</a></nav><p class="side-note">Your files. Your progress.<br>A fresh start in any chat.</p></aside><div><details class="mobile-nav"><summary>Jump to a section</summary><nav aria-label="On this page"><a href="#what-it-does">What it does</a><a href="#quick-start">Quick start</a><a href="#your-workspace">Your workspace</a><a href="#optional-installs">Optional installs</a><a href="#pdfs">PDFs</a><a href="#recordings-optional">Recordings (optional)</a><a href="#youtube-optional">YouTube (optional)</a><a href="#command-reference">Command reference</a><a href="#sharing-and-existing-schoolbot-users">Sharing and existing SchoolBot users</a><a href="#troubleshooting">Troubleshooting</a><a href="#development">Development</a></nav></details><main id="content"><h1 id="schoolbot">SchoolBot</h1>
+<p><strong>Keep your school context in files you own. Pick up in any AI chat.</strong></p>
+<p>SchoolBot is a small Python tool for organizing classes, extracting study
+materials, and carrying your progress into a fresh chat. Use it for Python,
+biology, history, trade school, or any other subject.</p>
+<p>Your notes, assignments, deadlines, and &quot;where was I?&quot; live in a local folder.
+A chat can help you study; it doesn't have to be the only place that remembers
+what you're doing. No SchoolBot account, API key, or paid AI integration needed.</p>
+<div class="flow" aria-label="Your files become a context export for a fresh chat"><div><b>Your files</b><small>Notes + progress</small></div><span class="arrow" aria-hidden="true">→</span><div><b>One export</b><small>Portable context</small></div><span class="arrow" aria-hidden="true">→</span><div><b>Fresh chat</b><small>Pick up here</small></div></div>
+
+<h2 id="what-it-does">What it does</h2>
+<ul>
+<li>Creates as many courses as you need, each with study and deadline templates.</li>
+<li>Reads Markdown, text, Python files, and notebook code/Markdown cells.</li>
+<li>Extracts PDF text with page numbers and embedded images (optional install).</li>
+<li>Transcribes local audio/video with timestamps using Whisper (optional install).</li>
+<li>Downloads and transcribes YouTube videos or playlists (optional install).</li>
+<li>Exports a course's context for a new chat, with source paths and an omissions report.</li>
+<li>Skips unchanged materials and saves progress after each successful extraction.</li>
+</ul>
+<p>It is a folder-based command-line tool, not a chat app or calendar service.
+It does not automatically read chats, save chat replies, generate summaries,
+execute your notebooks, or send reminders. Saving a short handoff after studying
+is the part that makes your context portable.</p>
+<h2 id="quick-start">Quick start</h2>
+<h3 id="1-get-the-folder-and-python">1. Get the folder and Python</h3>
+<p>On GitHub, choose <strong>Code → Download ZIP</strong> and extract it, or clone the repo:</p>
+<pre><code class="language-sh">git clone https://github.com/sc00ppp/schoolbot.git
+cd schoolbot
+</code></pre>
+<p>You can also unzip a <code>schoolbot-starter.zip</code> shared by a friend. Open a terminal
+<strong>inside the extracted project folder</strong>, where this README and <code>schoolbot.py</code>
+live. On Windows, right-click the folder and choose <strong>Open in Terminal</strong>.</p>
+<p>Install <a href="https://www.python.org/downloads/">Python</a> if needed. The basic tool
+requires Python 3.10 or newer. <strong>Python 3.11 is a conservative choice if you
+want Whisper too</strong>; see its <a href="https://github.com/openai/whisper#setup">upstream setup notes</a>.
+On Windows, enable the installer's PATH option. Check:</p>
+<pre><code class="language-sh">python --version
+</code></pre>
+<p>On macOS/Linux, use <code>python3</code> wherever this guide says <code>python</code> until you have
+activated a virtual environment. If Windows recognizes <code>py</code> but not <code>python</code>,
+use <code>py</code> for the basic commands.</p>
+<h3 id="2-create-your-first-course">2. Create your first course</h3>
+<p>No packages to install for this step:</p>
+<pre><code class="language-sh">python schoolbot.py init
+python schoolbot.py add-course python101 --name &quot;Introduction to Python&quot;
+python schoolbot.py export python101
+</code></pre>
+<p>Open <code>school/exports/python101-context.md</code>. That's your first portable context
+file. <code>.md</code> means Markdown: ordinary text you can edit in any text editor.</p>
+<h3 id="3-make-it-yours">3. Make it yours</h3>
+<p>Edit these files in any text editor:</p>
+<ul>
+<li><code>school/STUDENT.md</code>: how you learn and what you're aiming for.</li>
+<li><code>school/courses/python101/COURSE.md</code>: course details and topics.</li>
+<li><code>school/courses/python101/STATUS.md</code>: what you're doing and where you're stuck.</li>
+<li><code>school/courses/python101/TASKS.md</code>: assignments and deadlines.</li>
+</ul>
+<p>Drop notes or <code>.py</code> files into the course's <code>notes/</code> folder. To try a ready-made
+example, copy <code>examples/python-basics.md</code> there using your file manager.
+Then run:</p>
+<pre><code class="language-sh">python schoolbot.py ingest --course python101
+python schoolbot.py export python101
+</code></pre>
+<p>Attach or paste the exported context into a new Claude chat or another AI chat.
+Try: <strong>&quot;Read my current status. Help me practice loops, one question at a time.&quot;</strong></p>
+<h3 id="4-save-the-outcome-not-just-the-conversation">4. Save the outcome, not just the conversation</h3>
+<p>Before leaving the chat, ask it for an updated <code>STATUS.md</code> and a handoff listing
+what you learned, unresolved problems, files changed, and next steps.</p>
+<pre><code class="language-sh">python schoolbot.py session python101
+</code></pre>
+<p>Paste the handoff into the new session file printed by that command. Save the
+updated status in <code>STATUS.md</code>. Export again before starting your next chat.
+<a href="docs/CHAT_WORKFLOW.html">Full prompts, including rescuing context from an old chat →</a></p>
+<h2 id="your-workspace">Your workspace</h2>
+<pre><code class="language-text">school/                         # Your personal data; ignored by Git
+├── schoolbot.json
+├── STUDENT.md
+├── manifest.json               # Created on first successful ingestion
+├── courses/
+│   └── python101/
+│       ├── course.json         # Display name
+│       ├── COURSE.md
+│       ├── STATUS.md
+│       ├── TASKS.md
+│       ├── lectures/           # Slides, syllabus, lecture notes
+│       ├── assignments/        # Subfolders such as hw1/, hw2/ are fine
+│       ├── notes/              # Notes, practice code, saved explanations
+│       ├── recordings/        # Audio/video to transcribe
+│       ├── sessions/          # Saved chat handoffs
+│       └── extracted/         # Generated text and PDF images
+└── exports/
+    ├── python101-context.md
+    └── python101-omissions.md
+</code></pre>
+<p>Add another class with <code>python schoolbot.py add-course biology --name &quot;Biology&quot;</code>.
+Course IDs use letters, numbers, hyphens and underscores, with no spaces.
+Use separate IDs such as <code>fall26-biology</code> for different terms.</p>
+<h2 id="optional-installs">Optional installs</h2>
+<p>Create a <strong>virtual environment</strong> once: a folder for this project's Python
+packages. Activate it again whenever you open a new terminal to use these features.</p>
+<p><strong>Windows PowerShell:</strong></p>
+<pre><code class="language-powershell">python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+</code></pre>
+<p>If PowerShell blocks activation, use the environment's Python directly, e.g.
+<code>.\.venv\Scripts\python.exe -m pip install -r requirements.txt</code> and
+<code>.\.venv\Scripts\python.exe schoolbot.py ingest</code>. No execution-policy change needed.</p>
+<p><strong>macOS / Linux:</strong></p>
+<pre><code class="language-sh">python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install --upgrade pip
+</code></pre>
+<h3 id="pdfs">PDFs</h3>
+<pre><code class="language-sh">python -m pip install -r requirements.txt
+python schoolbot.py ingest --course python101
+</code></pre>
+<p>Put PDFs into <code>lectures/</code>, <code>assignments/</code>, or <code>notes/</code>. Extracted text keeps page
+numbers. Embedded images are saved beside the extracted text, but are not
+included in Markdown exports. Attach original PDFs when diagrams or layout
+matter. Image-only scans need OCR outside SchoolBot.
+<a href="https://pymupdf.readthedocs.io/en/latest/installation.html">PyMuPDF installation reference</a>.</p>
+<h3 id="recordings-optional">Recordings (optional)</h3>
+<p><strong>1. Install Whisper in your activated environment:</strong></p>
+<pre><code class="language-sh">python -m pip install -r requirements-transcription.txt
+</code></pre>
+<p><strong>2. Install FFmpeg</strong>, the audio/video decoder. Both <code>ffmpeg</code> and <code>ffprobe</code>
+come with a full FFmpeg distribution. This is a system tool, not the Python
+package named <code>ffmpeg</code>.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>System</th>
+  <th>Install</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td>Windows</td>
+  <td>If you use Chocolatey: <code>choco install ffmpeg</code>; if you use Scoop: <code>scoop install ffmpeg</code></td>
+</tr>
+<tr>
+  <td>macOS with Homebrew</td>
+  <td><code>brew install ffmpeg</code></td>
+</tr>
+<tr>
+  <td>Ubuntu / Debian</td>
+  <td><code>sudo apt install ffmpeg</code></td>
+</tr>
+</tbody>
+</table></div>
+<p>On Windows without a package manager, use the Windows builds linked from the
+<a href="https://ffmpeg.org/download.html">official FFmpeg downloads page</a>. Extract the
+archive and add its <code>bin</code> folder (containing <code>ffmpeg.exe</code> and <code>ffprobe.exe</code>) to
+your user PATH through <strong>Edit environment variables for your account → Path →
+Edit → New</strong>. Open a new terminal afterward and activate <code>.venv</code> again.</p>
+<p>Check setup:</p>
+<pre><code class="language-sh">ffmpeg -version
+ffprobe -version
+python schoolbot.py doctor
+</code></pre>
+<p><strong>3. Drop a recording into <code>school/courses/python101/recordings/</code>, then run:</strong></p>
+<pre><code class="language-sh">python schoolbot.py ingest --course python101 --recordings
+python schoolbot.py export python101
+</code></pre>
+<p>Supported formats: MP4, MKV, AVI, MOV, WebM, MP3, WAV, M4A, OGG, FLAC.
+Transcripts contain timestamps and feed into context exports. The first run
+downloads the selected model; transcription then runs locally. No API key.
+CPU operation is supported, but long recordings can take a while. Start with
+<code>base</code>; try <code>tiny</code> for speed or <code>small</code> for more accuracy. Model tradeoffs and
+installation details are in the <a href="https://github.com/openai/whisper">Whisper README</a>.</p>
+<pre><code class="language-sh"># Only recordings, across every course
+python scripts/transcribe_all.py
+
+# One course, with a different model
+python scripts/transcribe_all.py --course python101 --whisper-model small
+
+# One recording (path relative to school/, not the project folder)
+python schoolbot.py ingest --file courses/python101/recordings/week1.mp4 --recordings
+</code></pre>
+<p>Changing the model reprocesses recordings. Use <code>--force</code> to retry an unchanged
+file. The model is loaded once per batch; successful files are recorded as the
+batch progresses, so rerunning resumes work.</p>
+<h3 id="youtube-optional">YouTube (optional)</h3>
+<p>Install FFmpeg as above, then the downloader and transcription packages:</p>
+<pre><code class="language-sh">python -m pip install -r requirements-youtube.txt
+</code></pre>
+<p>Install <a href="https://docs.deno.com/runtime/getting_started/installation/">Deno</a> too:
+yt-dlp uses this JavaScript runtime for YouTube support. On Windows with Scoop,
+run <code>scoop install deno</code>; on macOS with Homebrew, run <code>brew install deno</code>. Other
+platforms can use the installers on that page. Reopen your terminal, reactivate
+the virtual environment, and check <code>deno --version</code>. Then:</p>
+<pre><code class="language-sh">python scripts/yt_to_docdump.py --url &quot;https://www.youtube.com/watch?v=VIDEO_ID&quot; --out &quot;school/courses/python101/notes/youtube&quot;
+python schoolbot.py export python101
+</code></pre>
+<p>Replace <code>VIDEO_ID</code> with the actual video ID. Repeat <code>--url</code> for multiple videos
+or supply a playlist URL to process the entire playlist. The example output
+folder makes the transcripts part of the course's next export automatically.
+Without <code>--out</code>, transcripts go to <code>school/youtube/</code> and aren't attached to a course.</p>
+<p>The default uses Whisper <code>base</code>. <code>--backend faster</code> selects the included
+faster-whisper backend; <code>--device cpu</code> avoids GPU setup; <code>--whisper-model small</code>
+changes the model. <code>--keep-audio</code> retains downloaded MP3s. Completed videos are
+tracked in the output folder and skipped on reruns. Remove their ledger entries
+from <code>_transcribed.json</code> if you want to regenerate them with a different model.</p>
+<p>YouTube requirements change. If downloads fail, update with
+<code>python -m pip install -U &quot;yt-dlp[default]&quot;</code> and consult the
+<a href="https://github.com/yt-dlp/yt-dlp#dependencies">yt-dlp dependency instructions</a>,
+including its JavaScript runtime requirements. Use recordings you have permission
+to download and process.</p>
+<h2 id="command-reference">Command reference</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Command</th>
+  <th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>python schoolbot.py init</code></td>
+  <td>Create a workspace; preserve existing notes</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py add-course ID --name &quot;Course name&quot;</code></td>
+  <td>Create a course</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py list</code></td>
+  <td>List courses</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py ingest</code></td>
+  <td>Process new/changed text, notebooks and PDFs</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py ingest --course ID --recordings</code></td>
+  <td>Also transcribe audio/video</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py export ID</code></td>
+  <td>Build a context file, default 80,000-character budget</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py export ID --max-chars 200000</code></td>
+  <td>Raise the export budget</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py session ID</code></td>
+  <td>Create a blank handoff note</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py doctor</code></td>
+  <td>Check optional dependencies</td>
+</tr>
+<tr>
+  <td><code>python schoolbot.py share</code></td>
+  <td>Build a clean starter ZIP</td>
+</tr>
+</tbody>
+</table></div>
+<p>Put <code>--workspace &quot;path/to/my-school&quot;</code> <strong>before</strong> the command to use another
+workspace, e.g. <code>python schoolbot.py --workspace &quot;../my-school&quot; init</code>.
+The default workspace stays next to the script even if you run it from another
+folder. Custom workspaces inside this repository need their own <code>.gitignore</code> entry.
+<code>python scripts/ingest.py</code> remains a shortcut for the new ingestion command.</p>
+<p>Exports prioritize current status and deadlines, course/student information,
+then session notes newest first, then materials. Whole sections that don't fit
+are omitted, not silently cut off. The omissions report lists every omitted file.
+The budget counts characters, not tokens; a chat service may have a smaller limit.
+Old extraction files are excluded if their source changed or was removed.
+Word documents, spreadsheets, standalone images and other unsupported files
+must be attached separately or converted to supported formats.</p>
+<h2 id="sharing-and-existing-schoolbot-users">Sharing and existing SchoolBot users</h2>
+<pre><code class="language-sh">python schoolbot.py share
+</code></pre>
+<p>Send <code>dist/schoolbot-starter.zip</code> to a friend. It contains only the tool, docs,
+and a fictional example, with no personal coursework or Git history.</p>
+<p>The original <code>AI/</code>, <code>ML/</code>, root <code>manifest.json</code>, and <code>COURSE_SUMMARY.md</code> are
+kept locally and ignored by Git; they are no longer in the current shared file tree. The new tool uses <code>school/</code> and doesn't read
+them automatically. To use old material, create courses and <strong>copy</strong> the wanted
+files into their material folders; copy useful parts of the old summary into
+<code>notes/</code>, then run ingestion. Existing extraction manifests aren't migrated.
+The new README and starter package apply to the general-purpose workspace.</p>
+<p>The shared repository starts with a clean history containing only the
+general-purpose tool, documentation, and fictional example. Personal coursework
+is excluded from both the current files and the published history.</p>
+<h2 id="troubleshooting">Troubleshooting</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+  <th>Problem</th>
+  <th>Try this</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td><code>python</code> not found</td>
+  <td>Reopen the terminal after installing Python; Windows: try <code>py</code>; macOS/Linux: <code>python3</code></td>
+</tr>
+<tr>
+  <td><code>schoolbot.py</code> not found</td>
+  <td>Open the terminal in the extracted project folder</td>
+</tr>
+<tr>
+  <td>No workspace / unknown course</td>
+  <td>Run <code>init</code>, then <code>add-course</code>; use <code>list</code> to check the exact ID</td>
+</tr>
+<tr>
+  <td>Missing package after installation</td>
+  <td>Activate the same <code>.venv</code>; <code>doctor</code> prints the Python interpreter being used</td>
+</tr>
+<tr>
+  <td>Whisper won't install on a very new Python</td>
+  <td>Create the environment with Python 3.11 (Windows: <code>py -3.11 -m venv .venv311</code>) and activate it</td>
+</tr>
+<tr>
+  <td>FFmpeg missing</td>
+  <td>Install the full FFmpeg distribution, add its <code>bin</code> folder to PATH, and reopen the terminal</td>
+</tr>
+<tr>
+  <td>Transcription is slow</td>
+  <td>Test a short recording with <code>--whisper-model tiny</code> first</td>
+</tr>
+<tr>
+  <td>GPU library error in YouTube mode</td>
+  <td>Add <code>--device cpu</code></td>
+</tr>
+<tr>
+  <td>Export doesn't contain a file</td>
+  <td>Read the omissions report; ingest changed PDFs/notebooks/recordings, raise the budget, or attach the original</td>
+</tr>
+<tr>
+  <td>The new chat doesn't know what happened</td>
+  <td>Save a handoff and update <code>STATUS.md</code>, then export again</td>
+</tr>
+</tbody>
+</table></div>
+<p>Back up the entire <code>school/</code> folder, not just exports. Local processing does not
+upload course files; attaching an export to a chat shares its contents with that
+service. Review the file before sharing it.</p>
+<h2 id="development">Development</h2>
+<p>Core workflow tests use Python's standard library:</p>
+<pre><code class="language-sh">python -m unittest discover -s tests -v
+</code></pre>
+<p>PDF tests run when PyMuPDF is installed. Transcription integration is tested with
+a fake model so the suite doesn't download model weights or require a GPU.</p>
+<footer>SchoolBot documentation · Your learning, saved locally.</footer></main></div></div><script>
+document.querySelectorAll('pre').forEach(pre=>{if(pre.querySelector('.language-text'))return;const btn=document.createElement('button');btn.className='copy';btn.type='button';btn.textContent='Copy';btn.setAttribute('aria-label','Copy command');pre.append(btn);btn.addEventListener('click',async()=>{const text=pre.querySelector('code').textContent;try{await navigator.clipboard.writeText(text);btn.textContent='Copied';}catch{const area=document.createElement('textarea');area.value=text;area.style.position='fixed';area.style.opacity='0';document.body.append(area);area.select();const ok=document.execCommand('copy');area.remove();btn.textContent=ok?'Copied':'Select text to copy';}setTimeout(()=>btn.textContent='Copy',2200);});});
+document.querySelectorAll('.mobile-nav a').forEach(a=>a.addEventListener('click',()=>a.closest('details').open=false));
+if('IntersectionObserver' in window){const observer=new IntersectionObserver(items=>{items.forEach(item=>{if(item.isIntersecting){document.querySelectorAll('nav a').forEach(a=>a.classList.toggle('active',a.hash==='#'+item.target.id));}});},{rootMargin:'-5% 0px -70% 0px'});document.querySelectorAll('main h2, main h3').forEach(h=>observer.observe(h));}
+</script></body></html>

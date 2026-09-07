@@ -1,0 +1,2 @@
+# Optional PDF support. The basic notes/context workflow uses only Python.
+PyMuPDF>=1.24,<2

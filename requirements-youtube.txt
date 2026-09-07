@@ -1,0 +1,3 @@
+-r requirements-transcription.txt
+yt-dlp[default]
+faster-whisper

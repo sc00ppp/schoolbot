@@ -1,0 +1,32 @@
+# Lecture recordings (too large for GitHub)
+*.mp4
+*.zip
+
+# Claude Code local settings
+.claude/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# NUL (Windows artifact)
+NUL
+
+# Personal workspaces and generated starter packages
+/school/
+/dist/
+/.test-workspaces/
+*.log
+.env
+.env.*
+
+# Legacy personal coursework (kept locally)
+/AI/
+/ML/
+/COURSE_SUMMARY.md
+/manifest.json
